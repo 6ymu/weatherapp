@@ -1,0 +1,56 @@
+﻿<Window x:Class="WpfApp1.historyList"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+                xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+         TextElement.Foreground="{DynamicResource MaterialDesignPaper}"
+         TextElement.FontWeight="Regular"
+         TextElement.FontSize="11"
+
+         TextOptions.TextFormattingMode="Ideal"
+         TextOptions.TextRenderingMode="Auto"
+         Background="White"
+         FontFamily="{DynamicResource MaterialDesignFont}"
+         ResizeMode="NoResize"
+         Title="History" Height="800" Width="460">
+    <StackPanel>
+        <materialDesign:Card Foreground="White" Padding="5">
+        <StackPanel Orientation="Horizontal" Background="Teal" >
+            <TextBlock Text="Date" Width="60" />
+            <TextBlock Text="City" Width="100" />
+            <TextBlock Text="Temp" Width="50" />
+            <TextBlock Text="Feels Like" Width="60" />
+            <TextBlock Text="Humidity" Width="50" />
+            <TextBlock Text="Wind"  Width="30" />
+            <TextBlock Text="T Min"  Width="50" />
+            <TextBlock Text="T Max"  Width="50" />
+        </StackPanel>
+        </materialDesign:Card>
+        <ListBox x:Name="listBoxHistory" Margin="0" Padding="0">
+            <ListBox.ItemTemplate  >
+                <DataTemplate >
+                    <materialDesign:Card Margin="0" Padding="0" Foreground="White">
+                        <StackPanel Orientation="Horizontal" Background="CadetBlue" Margin="0" >
+                            <TextBlock Text="{Binding Path=date}" Width="60" />
+                            <TextBlock Text="{Binding Path=city}" Width="100"/>
+                            <TextBlock Text="{Binding Path=temp}" Width="50"/>
+                            <TextBlock Text="{Binding Path=temp_feels}" Width="60"/>
+                            <TextBlock Text="{Binding Path=humidity}" Width="50"/>
+                            <TextBlock Text="{Binding Path=wind}" Width="30"/>
+                            <TextBlock Text="{Binding Path=temp_min}" Width="50"/>
+                            <TextBlock Text="{Binding Path=temp_max}" Width="50"/>
+                        </StackPanel>
+                    </materialDesign:Card>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        
+        
+
+
+
+    </StackPanel>
+</Window>
